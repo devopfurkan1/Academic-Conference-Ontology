@@ -1,0 +1,530 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12/"
+     xml:base="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-12="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>Categorizes a session under a specific research topic or track.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>Defines the primary research field of an academic paper.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>Connects a person to their home university or organization.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>Relates a paper to the specific session where it will be showcased.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>Links an academic paper to its respective author(s).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate">
+        <rdfs:comment>The scheduled date and time for a conference session.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle">
+        <rdfs:comment>The official title of the academic paper as a text string.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+        <rdfs:comment>A general category for any written material, specifically academic papers and proceedings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+        <rdfs:comment>General class for organized academic gatherings during the conference.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+        <rdfs:comment>Represents legal entities such as universities or research institutes that participants are affiliated with.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document"/>
+        <rdfs:comment>An academic article submitted to the conference for review and presentation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">
+        <rdfs:comment>Represents any human individual involved in the academic conference, including authors, reviewers, and speakers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event"/>
+        <rdfs:comment>A specific time block within the conference where multiple papers on a similar topic are presented.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">
+        <rdfs:comment>The subject area or research field that papers and sessions belong to (e.g., Artificial Intelligence, Semantic Web).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Celal_Bayar_University -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Celal_Bayar_University">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Charlie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Charlie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer"/>
+        <untitled-ontology-12:isAffiliatedWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"/>
+        <untitled-ontology-12:hasTopic rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning"/>
+        <untitled-ontology-12:isWrittenBy rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice"/>
+        <untitled-ontology-12:hasTitle>Deep Learning in Healthcare</untitled-ontology-12:hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"/>
+        <untitled-ontology-12:hasTopic rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing"/>
+        <untitled-ontology-12:isWrittenBy rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob"/>
+        <untitled-ontology-12:hasTitle>Advenced NLP Models</untitled-ontology-12:hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_SemanticWeb_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_SemanticWeb_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"/>
+        <untitled-ontology-12:isWrittenBy rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe"/>
+        <untitled-ontology-12:hasTitle>Introduction to Semantic Web</untitled-ontology-12:hasTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author"/>
+        <untitled-ontology-12:isAffiliatedWith rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_AI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_AI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"/>
+        <untitled-ontology-12:hasTopic rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence"/>
+        <untitled-ontology-12:hasDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-06T12:00:00</untitled-ontology-12:hasDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Afternoon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Afternoon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"/>
+        <untitled-ontology-12:belongsToTrack rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing"/>
+        <untitled-ontology-12:chairs rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith"/>
+        <untitled-ontology-12:hasDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-26T19:00:00</untitled-ontology-12:hasDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Morning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Morning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"/>
+        <untitled-ontology-12:belongsToTrack rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning"/>
+        <untitled-ontology-12:containsPaper rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01"/>
+        <untitled-ontology-12:hasDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-15T10:00:00</untitled-ontology-12:hasDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
