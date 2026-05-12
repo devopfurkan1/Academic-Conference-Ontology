@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Academic_Conference_Management_Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12","name":"Academic_Conference_Management_Ontology", "headline":"Document describing the ontology http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12", "dateReleased":"2026-05-12", "dateModified":"2026-05-12", "version":"0.1", "author":[{"@type":"Person","name":"Tahircan"},{"@type":"Person","name":"Muhammet Furkan"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Academic_Conference_Management_Ontology</h1>
+<h2>Release: 2026-05-12</h2>
+
+
+<dl>
+<dt>Modified on: 2026-05-12</dt>
+<dt>Latest version:</dt>
+<dd><a href="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12">http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12</a></dd>
+<dt>Revision:</dt>
+<dd>0.1</dd>
+<dt>Authors:</dt>
+<dd>Tahircan<a href="mailto:190316011@ogr.cbu.edu.tr">&#9993;</a></dd><dd>Muhammet Furkan</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12/&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>untitled-ontology-12</b></td><td>&lt;http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Academic_Conference_Management_Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Author"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author">
+         <span>Author</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Document"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document">
+         <span>Document</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Event"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event">
+         <span>Event</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Hall"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall">
+         <span>Hall</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Organization"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">
+         <span>Organization</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Paper"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">
+         <span>Paper</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Person"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">
+         <span>Person</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Reviewer"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer">
+         <span>Reviewer</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Session"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">
+         <span>Session</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Speaker"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker">
+         <span>Speaker</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Topic"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">
+         <span>Topic</span>
+      </a>
+   </li>
+   <li>
+      <a href="#University"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University">
+         <span>University</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#belongsToTrack"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">
+         <span>belongs To Track</span>
+      </a>
+   </li>
+   <li>
+      <a href="#chairs"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs">
+         <span>chairs</span>
+      </a>
+   </li>
+   <li>
+      <a href="#containsPaper"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper">
+         <span>contains Paper</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasMember"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember">
+         <span>has Member</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasSession"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession">
+         <span>has Session</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasTopic"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic">
+         <span>has Topic</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isAffiliatedWith"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith">
+         <span>is Affiliated With</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isHeldln"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln">
+         <span>is Heldln</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isPresentedln"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln">
+         <span>is Presentedln</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isWrittenBy"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">
+         <span>is Written By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#reviews"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews">
+         <span>reviews</span>
+      </a>
+   </li>
+   <li>
+      <a href="#wrote"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote">
+         <span>wrote</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#hasDate"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate">
+         <span>has Date</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasTitle"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle">
+         <span>has Title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Celal_Bayar_University"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Celal_Bayar_University">
+         <span>Celal Bayar University</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Expert_Charlie"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Charlie">
+         <span>Expert Charlie</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Expert_Ted"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Ted">
+         <span>Expert Ted</span>
+      </a>
+   </li>
+   <li>
+      <a href="#John_Doe"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe">
+         <span>John Doe</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Keynote_Dr_Smith"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith">
+         <span>Keynote Dr Smith</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Middle_East_Technical_University"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University">
+         <span>Middle East Technical University</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Paper_01"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01">
+         <span>Paper 01</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Paper_02"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02">
+         <span>Paper 02</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Paper_SemanticWeb_01"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_SemanticWeb_01">
+         <span>Paper Semantic Web 01</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Researcher_Alice"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice">
+         <span>Researcher Alice</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Researcher_Bob"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob">
+         <span>Researcher Bob</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Session_AI"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_AI">
+         <span>Session A I</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Session_Afternoon"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Afternoon">
+         <span>Session Afternoon</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Session_Morning"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Morning">
+         <span>Session Morning</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Topic_Artifical_Intelligence"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence">
+         <span>Topic Artifical Intelligence</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Topic_MachineLearning"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning">
+         <span>Topic Machine Learning</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Topic_NaturalLanguageProcessing"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing">
+         <span>Topic Natural Language Processing</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Istanbul_Technical_University"
+         title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University">
+         <span>Istanbul Technical University</span>
+      </a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Academic_Conference_Management_Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.
+
+</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Academic_Conference_Management_Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Academic_Conference_Management_Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Author" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author"> <span>Author</span> </a></li>
+  <li><a href="#Document" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document"> <span>Document</span> </a></li>
+  <li><a href="#Event" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event"> <span>Event</span> </a></li>
+  <li><a href="#Hall" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall"> <span>Hall</span> </a></li>
+  <li><a href="#Organization" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization"> <span>Organization</span> </a></li>
+  <li><a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper"> <span>Paper</span> </a></li>
+  <li><a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person"> <span>Person</span> </a></li>
+  <li><a href="#Reviewer" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer"> <span>Reviewer</span> </a></li>
+  <li><a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session"> <span>Session</span> </a></li>
+  <li><a href="#Speaker" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker"> <span>Speaker</span> </a></li>
+  <li><a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic"> <span>Topic</span> </a></li>
+  <li><a href="#University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University"> <span>University</span> </a></li>
+ </ul>
+ <div class="entity" id="Author">
+  <h3>Author<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#John_Doe" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe">John Doe</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Researcher_Alice" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice">Researcher Alice</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Researcher_Bob" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob">Researcher Bob</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Document">
+  <h3>Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document</p>
+  <div class="comment">
+   <span class="markdown">A general category for any written material, specifically academic papers and proceedings.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event">Event</a> <sup class="type-c" title="class">c</sup>, <a href="#Organization" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">Organization</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>, <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Event">
+  <h3>Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event</p>
+  <div class="comment">
+   <span class="markdown">General class for organized academic gatherings during the conference.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Document" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#Organization" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">Organization</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>, <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hall">
+  <h3>Hall<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Organization" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Organization">
+  <h3>Organization<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization</p>
+  <div class="comment">
+   <span class="markdown">Represents legal entities such as universities or research institutes that participants are affiliated with.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Hall" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall">Hall</a> <sup class="type-c" title="class">c</sup>, <a href="#University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Document" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#Event" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event">Event</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>, <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Paper">
+  <h3>Paper<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper</p>
+  <div class="comment">
+   <span class="markdown">An academic article submitted to the conference for review and presentation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Document" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Paper_01" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01">Paper 01</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Paper_02" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02">Paper 02</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Paper_SemanticWeb_01" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_SemanticWeb_01">Paper Semantic Web 01</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Person">
+  <h3>Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person</p>
+  <div class="comment">
+   <span class="markdown">Represents any human individual involved in the academic conference, including authors, reviewers, and speakers.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Author" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author">Author</a> <sup class="type-c" title="class">c</sup>, <a href="#Reviewer" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer">Reviewer</a> <sup class="type-c" title="class">c</sup>, <a href="#Speaker" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker">Speaker</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Document" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#Event" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event">Event</a> <sup class="type-c" title="class">c</sup>, <a href="#Organization" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Reviewer">
+  <h3>Reviewer<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Expert_Charlie" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Charlie">Expert Charlie</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Expert_Ted" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Ted">Expert Ted</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Session">
+  <h3>Session<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session</p>
+  <div class="comment">
+   <span class="markdown">A specific time block within the conference where multiple papers on a similar topic are presented.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Session_AI" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_AI">Session A I</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Session_Afternoon" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Afternoon">Session Afternoon</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Session_Morning" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Morning">Session Morning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Speaker">
+  <h3>Speaker<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Keynote_Dr_Smith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith">Keynote Dr Smith</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Topic">
+  <h3>Topic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic</p>
+  <div class="comment">
+   <span class="markdown">The subject area or research field that papers and sessions belong to (e.g., Artificial Intelligence, Semantic Web).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Topic_Artifical_Intelligence" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence">Topic Artifical Intelligence</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Topic_MachineLearning" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning">Topic Machine Learning</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Topic_NaturalLanguageProcessing" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing">Topic Natural Language Processing</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Document" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#Event" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event">Event</a> <sup class="type-c" title="class">c</sup>, <a href="#Organization" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="University">
+  <h3>University<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Organization" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Celal_Bayar_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Celal_Bayar_University">Celal Bayar University</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Istanbul_Technical_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University">Istanbul Technical University</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Middle_East_Technical_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University">Middle East Technical University</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack"> <span>belongs To Track</span> </a></li>
+  <li><a href="#chairs" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs"> <span>chairs</span> </a></li>
+  <li><a href="#containsPaper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper"> <span>contains Paper</span> </a></li>
+  <li><a href="#hasMember" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember"> <span>has Member</span> </a></li>
+  <li><a href="#hasSession" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession"> <span>has Session</span> </a></li>
+  <li><a href="#hasTopic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic"> <span>has Topic</span> </a></li>
+  <li><a href="#isAffiliatedWith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith"> <span>is Affiliated With</span> </a></li>
+  <li><a href="#isHeldln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln"> <span>is Heldln</span> </a></li>
+  <li><a href="#isPresentedln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln"> <span>is Presentedln</span> </a></li>
+  <li><a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy"> <span>is Written By</span> </a></li>
+  <li><a href="#reviews" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews"> <span>reviews</span> </a></li>
+  <li><a href="#wrote" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote"> <span>wrote</span> </a></li>
+ </ul>
+ <div class="entity" id="belongsToTrack">
+  <h3>belongs To Track<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack</p>
+  <div class="comment">
+   <span class="markdown">Categorizes a session under a specific research topic or track.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasSession" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession">has Session</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">belongs To Track</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">belongs To Track</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasSession" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession">has Session</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="chairs">
+  <h3>chairs<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#chairs" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs">chairs</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#chairs" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs">chairs</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="containsPaper">
+  <h3>contains Paper<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#isPresentedln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln">is Presentedln</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isPresentedln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln">is Presentedln</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasMember">
+  <h3>has Member<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#isAffiliatedWith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith">is Affiliated With</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isAffiliatedWith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith">is Affiliated With</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSession">
+  <h3>has Session<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">belongs To Track</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">belongs To Track</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTopic">
+  <h3>has Topic<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic</p>
+  <div class="comment">
+   <span class="markdown">Defines the primary research field of an academic paper.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#hasTopic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic">has Topic</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#hasTopic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic">has Topic</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAffiliatedWith">
+  <h3>is Affiliated With<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith</p>
+  <div class="comment">
+   <span class="markdown">Connects a person to their home university or organization.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasMember" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember">has Member</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#isAffiliatedWith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith">is Affiliated With</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Person" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">belongs To Track</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University">University</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasMember" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember">has Member</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isHeldln">
+  <h3>is Heldln<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#isHeldln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln">is Heldln</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#isHeldln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln">is Heldln</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Hall" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall">Hall</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isPresentedln">
+  <h3>is Presentedln<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln</p>
+  <div class="comment">
+   <span class="markdown">Relates a paper to the specific session where it will be showcased.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#containsPaper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper">contains Paper</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#isPresentedln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln">is Presentedln</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#isPresentedln" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln">is Presentedln</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#containsPaper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper">contains Paper</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isWrittenBy">
+  <h3>is Written By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy</p>
+  <div class="comment">
+   <span class="markdown">Links an academic paper to its respective author(s).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#wrote" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote">wrote</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">is Written By</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">is Written By</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Author" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author">Author</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#wrote" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote">wrote</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="reviews">
+  <h3>reviews<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#reviews" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews">reviews</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Reviewer" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer">Reviewer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#reviews" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews">reviews</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="wrote">
+  <h3>wrote<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">is Written By</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">is Written By</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasDate" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate"> <span>has Date</span> </a></li>
+  <li><a href="#hasTitle" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle"> <span>has Title</span> </a></li>
+ </ul>
+ <div class="entity" id="hasDate">
+  <h3>has Date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate</p>
+  <div class="comment">
+   <span class="markdown">The scheduled date and time for a conference session.</span>
+  </div>
+ </div>
+ <div class="entity" id="hasTitle">
+  <h3>has Title<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle</p>
+  <div class="comment">
+   <span class="markdown">The official title of the academic paper as a text string.</span>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#Celal_Bayar_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Celal_Bayar_University"> <span>Celal Bayar University</span> </a></li>
+  <li><a href="#Expert_Charlie" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Charlie"> <span>Expert Charlie</span> </a></li>
+  <li><a href="#Expert_Ted" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Ted"> <span>Expert Ted</span> </a></li>
+  <li><a href="#John_Doe" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe"> <span>John Doe</span> </a></li>
+  <li><a href="#Keynote_Dr_Smith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith"> <span>Keynote Dr Smith</span> </a></li>
+  <li><a href="#Middle_East_Technical_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University"> <span>Middle East Technical University</span> </a></li>
+  <li><a href="#Paper_01" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01"> <span>Paper 01</span> </a></li>
+  <li><a href="#Paper_02" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02"> <span>Paper 02</span> </a></li>
+  <li><a href="#Paper_SemanticWeb_01" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_SemanticWeb_01"> <span>Paper Semantic Web 01</span> </a></li>
+  <li><a href="#Researcher_Alice" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice"> <span>Researcher Alice</span> </a></li>
+  <li><a href="#Researcher_Bob" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob"> <span>Researcher Bob</span> </a></li>
+  <li><a href="#Session_AI" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_AI"> <span>Session A I</span> </a></li>
+  <li><a href="#Session_Afternoon" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Afternoon"> <span>Session Afternoon</span> </a></li>
+  <li><a href="#Session_Morning" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Morning"> <span>Session Morning</span> </a></li>
+  <li><a href="#Topic_Artifical_Intelligence" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence"> <span>Topic Artifical Intelligence</span> </a></li>
+  <li><a href="#Topic_MachineLearning" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning"> <span>Topic Machine Learning</span> </a></li>
+  <li><a href="#Topic_NaturalLanguageProcessing" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing"> <span>Topic Natural Language Processing</span> </a></li>
+  <li><a href="#Istanbul_Technical_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University"> <span>Istanbul Technical University</span> </a></li>
+ </ul>
+ <div class="entity" id="Celal_Bayar_University">
+  <h3>Celal Bayar University<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Celal_Bayar_University</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Expert_Charlie">
+  <h3>Expert Charlie<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Charlie</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Reviewer" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer">Reviewer</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#isAffiliatedWith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith">is Affiliated With</a> <sup class="type-op" title="object property">op</sup> <a href="#Middle_East_Technical_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University">Middle East Technical University</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#reviews" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews">reviews</a> <sup class="type-op" title="object property">op</sup> <a href="#Paper_01" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01">Paper 01</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Expert_Ted">
+  <h3>Expert Ted<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Ted</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Reviewer" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer">Reviewer</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#reviews" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews">reviews</a> <sup class="type-op" title="object property">op</sup> <a href="#Paper_02" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02">Paper 02</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="John_Doe">
+  <h3>John Doe<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Author" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author">Author</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Keynote_Dr_Smith">
+  <h3>Keynote Dr Smith<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Speaker" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker">Speaker</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Middle_East_Technical_University">
+  <h3>Middle East Technical University<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Paper_01">
+  <h3>Paper 01<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasTopic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic">has Topic</a> <sup class="type-op" title="object property">op</sup> <a href="#Topic_MachineLearning" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning">Topic Machine Learning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">is Written By</a> <sup class="type-op" title="object property">op</sup> <a href="#Researcher_Alice" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice">Researcher Alice</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasTitle" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle">has Title</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Deep Learning in Healthcare"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Paper_02">
+  <h3>Paper 02<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasTopic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic">has Topic</a> <sup class="type-op" title="object property">op</sup> <a href="#Topic_NaturalLanguageProcessing" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing">Topic Natural Language Processing</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">is Written By</a> <sup class="type-op" title="object property">op</sup> <a href="#Researcher_Bob" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob">Researcher Bob</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasTitle" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle">has Title</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Advenced NLP Models"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Paper_SemanticWeb_01">
+  <h3>Paper Semantic Web 01<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_SemanticWeb_01</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Paper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper">Paper</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#isWrittenBy" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy">is Written By</a> <sup class="type-op" title="object property">op</sup> <a href="#John_Doe" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe">John Doe</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasTitle" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle">has Title</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Introduction to Semantic Web"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Researcher_Alice">
+  <h3>Researcher Alice<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Author" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author">Author</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#isAffiliatedWith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith">is Affiliated With</a> <sup class="type-op" title="object property">op</sup> <a href="#Istanbul_Technical_University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University">Istanbul Technical University</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Researcher_Bob">
+  <h3>Researcher Bob<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Author" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author">Author</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Session_AI">
+  <h3>Session A I<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_AI</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasTopic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic">has Topic</a> <sup class="type-op" title="object property">op</sup> <a href="#Topic_Artifical_Intelligence" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence">Topic Artifical Intelligence</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDate" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate">has Date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2026-05-06T12:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Session_Afternoon">
+  <h3>Session Afternoon<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Afternoon</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">belongs To Track</a> <sup class="type-op" title="object property">op</sup> <a href="#Topic_NaturalLanguageProcessing" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing">Topic Natural Language Processing</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#chairs" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs">chairs</a> <sup class="type-op" title="object property">op</sup> <a href="#Keynote_Dr_Smith" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith">Keynote Dr Smith</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDate" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate">has Date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2026-05-26T19:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Session_Morning">
+  <h3>Session Morning<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Morning</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Session" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session">Session</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#belongsToTrack" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack">belongs To Track</a> <sup class="type-op" title="object property">op</sup> <a href="#Topic_MachineLearning" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning">Topic Machine Learning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#containsPaper" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper">contains Paper</a> <sup class="type-op" title="object property">op</sup> <a href="#Paper_01" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01">Paper 01</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDate" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate">has Date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2026-05-15T10:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Topic_Artifical_Intelligence">
+  <h3>Topic Artifical Intelligence<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Topic_MachineLearning">
+  <h3>Topic Machine Learning<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Topic_NaturalLanguageProcessing">
+  <h3>Topic Natural Language Processing<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Topic" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic">Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Istanbul_Technical_University">
+  <h3>Istanbul Technical University<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#University" title="http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

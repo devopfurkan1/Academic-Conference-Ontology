@@ -1,0 +1,343 @@
+@prefix : <http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#> .
+
+<http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#belongsToTrack
+:belongsToTrack rdf:type owl:ObjectProperty ;
+                owl:inverseOf :hasSession ;
+                rdfs:domain [ rdf:type owl:Restriction ;
+                              owl:onProperty :belongsToTrack ;
+                              owl:someValuesFrom :Session
+                            ] ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty :belongsToTrack ;
+                             owl:someValuesFrom :Topic
+                           ] ;
+                rdfs:comment "Categorizes a session under a specific research topic or track." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#chairs
+:chairs rdf:type owl:ObjectProperty ;
+        rdfs:domain [ rdf:type owl:Restriction ;
+                      owl:onProperty :chairs ;
+                      owl:someValuesFrom :Person
+                    ] ;
+        rdfs:range [ rdf:type owl:Restriction ;
+                     owl:onProperty :chairs ;
+                     owl:someValuesFrom :Session
+                   ] .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#containsPaper
+:containsPaper rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isPresentedln ;
+               owl:inverseOf :isPresentedln .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :isAffiliatedWith ;
+           owl:inverseOf :isAffiliatedWith .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasSession
+:hasSession rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :belongsToTrack .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTopic
+:hasTopic rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasTopic ;
+                        owl:someValuesFrom :Paper
+                      ] ;
+          rdfs:range [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasTopic ;
+                       owl:someValuesFrom :Topic
+                     ] ;
+          rdfs:comment "Defines the primary research field of an academic paper." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isAffiliatedWith
+:isAffiliatedWith rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Restriction ;
+                                owl:onProperty :isAffiliatedWith ;
+                                owl:someValuesFrom :Person
+                              ] ;
+                  rdfs:range [ rdf:type owl:Restriction ;
+                               owl:onProperty :belongsToTrack ;
+                               owl:someValuesFrom :University
+                             ] ;
+                  rdfs:comment "Connects a person to their home university or organization." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isHeldln
+:isHeldln rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Restriction ;
+                        owl:onProperty :isHeldln ;
+                        owl:someValuesFrom :Session
+                      ] ;
+          rdfs:range [ rdf:type owl:Restriction ;
+                       owl:onProperty :isHeldln ;
+                       owl:someValuesFrom :Hall
+                     ] .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isPresentedln
+:isPresentedln rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Restriction ;
+                             owl:onProperty :isPresentedln ;
+                             owl:someValuesFrom :Paper
+                           ] ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty :isPresentedln ;
+                            owl:someValuesFrom :Session
+                          ] ;
+               rdfs:comment "Relates a paper to the specific session where it will be showcased." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#isWrittenBy
+:isWrittenBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :wrote ;
+             rdfs:domain [ rdf:type owl:Restriction ;
+                           owl:onProperty :isWrittenBy ;
+                           owl:someValuesFrom :Paper
+                         ] ;
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty :isWrittenBy ;
+                          owl:someValuesFrom :Author
+                        ] ;
+             rdfs:comment "Links an academic paper to its respective author(s)." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#reviews
+:reviews rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Restriction ;
+                       owl:onProperty :reviews ;
+                       owl:someValuesFrom :Reviewer
+                     ] ;
+         rdfs:range [ rdf:type owl:Restriction ;
+                      owl:onProperty :reviews ;
+                      owl:someValuesFrom :Paper
+                    ] .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#wrote
+:wrote rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :isWrittenBy .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasDate
+:hasDate rdf:type owl:DatatypeProperty ;
+         rdfs:comment "The scheduled date and time for a conference session." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:comment "The official title of the academic paper as a text string." .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Document
+:Document rdf:type owl:Class ;
+          owl:disjointWith :Event ,
+                           :Organization ,
+                           :Person ,
+                           :Topic ;
+          rdfs:comment "A general category for any written material, specifically academic papers and proceedings." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Event
+:Event rdf:type owl:Class ;
+       owl:disjointWith :Organization ,
+                        :Person ,
+                        :Topic ;
+       rdfs:comment "General class for organized academic gatherings during the conference." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Hall
+:Hall rdf:type owl:Class ;
+      rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Organization
+:Organization rdf:type owl:Class ;
+              owl:disjointWith :Person ,
+                               :Topic ;
+              rdfs:comment "Represents legal entities such as universities or research institutes that participants are affiliated with." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Document ;
+       rdfs:comment "An academic article submitted to the conference for review and presentation." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Person
+:Person rdf:type owl:Class ;
+        rdfs:comment "Represents any human individual involved in the academic conference, including authors, reviewers, and speakers." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Reviewer
+:Reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session
+:Session rdf:type owl:Class ;
+         rdfs:subClassOf :Event ;
+         rdfs:comment "A specific time block within the conference where multiple papers on a similar topic are presented." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Speaker
+:Speaker rdf:type owl:Class ;
+         rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic
+:Topic rdf:type owl:Class ;
+       rdfs:comment "The subject area or research field that papers and sessions belong to (e.g., Artificial Intelligence, Semantic Web)." .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#University
+:University rdf:type owl:Class ;
+            rdfs:subClassOf :Organization .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Celal_Bayar_University
+:Celal_Bayar_University rdf:type owl:NamedIndividual ,
+                                 :University .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Charlie
+:Expert_Charlie rdf:type owl:NamedIndividual ,
+                         :Reviewer ;
+                :isAffiliatedWith :Middle_East_Technical_University ;
+                :reviews :Paper_01 .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Expert_Ted
+:Expert_Ted rdf:type owl:NamedIndividual ,
+                     :Reviewer ;
+            :reviews :Paper_02 .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Istanbul_Technical_University
+:Istanbul_Technical_University rdf:type owl:NamedIndividual ,
+                                        :University .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#John_Doe
+:John_Doe rdf:type owl:NamedIndividual ,
+                   :Author .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Keynote_Dr_Smith
+:Keynote_Dr_Smith rdf:type owl:NamedIndividual ,
+                           :Speaker .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Middle_East_Technical_University
+:Middle_East_Technical_University rdf:type owl:NamedIndividual ,
+                                           :University .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_01
+:Paper_01 rdf:type owl:NamedIndividual ,
+                   :Paper ;
+          :hasTopic :Topic_MachineLearning ;
+          :isWrittenBy :Researcher_Alice ;
+          :hasTitle "Deep Learning in Healthcare" .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_02
+:Paper_02 rdf:type owl:NamedIndividual ,
+                   :Paper ;
+          :hasTopic :Topic_NaturalLanguageProcessing ;
+          :isWrittenBy :Researcher_Bob ;
+          :hasTitle "Advenced NLP Models" .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Paper_SemanticWeb_01
+:Paper_SemanticWeb_01 rdf:type owl:NamedIndividual ,
+                               :Paper ;
+                      :isWrittenBy :John_Doe ;
+                      :hasTitle "Introduction to Semantic Web" .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Alice
+:Researcher_Alice rdf:type owl:NamedIndividual ,
+                           :Author ;
+                  :isAffiliatedWith :Istanbul_Technical_University .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Researcher_Bob
+:Researcher_Bob rdf:type owl:NamedIndividual ,
+                         :Author .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_AI
+:Session_AI rdf:type owl:NamedIndividual ,
+                     :Session ;
+            :hasTopic :Topic_Artifical_Intelligence ;
+            :hasDate "2026-05-06T12:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Afternoon
+:Session_Afternoon rdf:type owl:NamedIndividual ,
+                            :Session ;
+                   :belongsToTrack :Topic_NaturalLanguageProcessing ;
+                   :chairs :Keynote_Dr_Smith ;
+                   :hasDate "2026-05-26T19:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Session_Morning
+:Session_Morning rdf:type owl:NamedIndividual ,
+                          :Session ;
+                 :belongsToTrack :Topic_MachineLearning ;
+                 :containsPaper :Paper_01 ;
+                 :hasDate "2026-05-15T10:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_Artifical_Intelligence
+:Topic_Artifical_Intelligence rdf:type owl:NamedIndividual ,
+                                       :Topic .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_MachineLearning
+:Topic_MachineLearning rdf:type owl:NamedIndividual ,
+                                :Topic .
+
+
+###  http://www.semanticweb.org/furka/ontologies/2026/3/untitled-ontology-12#Topic_NaturalLanguageProcessing
+:Topic_NaturalLanguageProcessing rdf:type owl:NamedIndividual ,
+                                          :Topic .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
